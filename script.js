@@ -1,23 +1,24 @@
-/* =========================================================
+/* ═══════════════════════════════════════════════
    VM DESIGN STUDIO — script.js
-   ========================================================= */
+   ═══════════════════════════════════════════════ */
 (function () {
   "use strict";
 
   /* ---- EDIT THIS: real WhatsApp number (country code, no + or spaces) ---- */
-  var WHATSAPP_NUMBER = "919876543210"; // TODO: replace with owner's real number // TODO: replace with owner's real number
+  var WHATSAPP_NUMBER = "919876543210"; // TODO: replace with owner's real number
 
   function waLink(message) {
     return "https://wa.me/" + WHATSAPP_NUMBER + "?text=" + encodeURIComponent(message);
   }
   var WA_GENERAL = waLink("Hi, I'm interested in VM Design Studio couture.");
-  var WA_CUSTOM = waLink("Hi, I'm interested in custom couture from VM Design Studio.");
+  var WA_FITTING = waLink("Hi, I'd like to book a video fitting call with VM Design Studio.");
 
   /* ---- Lookbook data (update prices/details with owner) ---- */
   var LOOKBOOK = [
     {
       name: "Aurelia Jacket — Cream",
-      cat: "Embroidered Jacket | Couture Collection",
+      cat: "Embroidered Jacket",
+      group: "jacket",
       tag: "Bestseller · 40+ hrs handwork",
       price: "₹12,000 – ₹15,000",
       img: "images/jacket-cream.svg",
@@ -27,7 +28,8 @@
     },
     {
       name: "Ivory Heritage Jacket",
-      cat: "Embroidered Jacket | Couture Collection",
+      cat: "Embroidered Jacket",
+      group: "jacket",
       tag: "New",
       price: "₹15,000 – ₹18,000",
       img: "images/jacket-ivory.svg",
@@ -36,9 +38,21 @@
       details: ["Technique: gold zari aari embroidery", "Lead time: 3–4 weeks", "Sizes XS–XXL, made to measure", "Custom colours available"]
     },
     {
+      name: "Indigo Statement Jacket",
+      cat: "Custom Jacket",
+      group: "jacket",
+      tag: "Custom colourway",
+      price: "₹16,000 – ₹22,000",
+      img: "images/jacket-blue.svg",
+      alt: "Indigo blue hand-embroidered jacket with golden zari work — VM Design Studio",
+      desc: "Deep indigo with gold zari — a bold, contemporary take on the heritage jacket. Made to order in your size.",
+      details: ["Technique: hand zari + aari", "Lead time: 4–5 weeks", "Made to measure", "Matching dupatta available"]
+    },
+    {
       name: "Rani Bridal Lehenga — Red",
-      cat: "Bridal Lehenga | Bridal Collection",
-      tag: "Bridal · Book 8–10 weeks ahead",
+      cat: "Bridal Lehenga",
+      group: "bridal",
+      tag: "Bridal · book 8–10 weeks ahead",
       price: "₹45,000 – ₹75,000",
       img: "images/lehenga-red.svg",
       alt: "Red bridal lehenga with heavy golden zari embroidery — VM Design Studio",
@@ -47,7 +61,8 @@
     },
     {
       name: "Maharani Lehenga — Maroon",
-      cat: "Bridal Lehenga | Bridal Collection",
+      cat: "Bridal Lehenga",
+      group: "bridal",
       tag: "Bridal",
       price: "₹35,000 – ₹60,000",
       img: "images/lehenga-maroon.svg",
@@ -57,7 +72,8 @@
     },
     {
       name: "Emerald Bespoke Gown",
-      cat: "Custom Couture | Bespoke",
+      cat: "Custom Couture",
+      group: "bespoke",
       tag: "Custom · Price on Request",
       price: "Price on Request",
       img: "images/gown-custom.svg",
@@ -67,56 +83,66 @@
     },
     {
       name: "Zari Clutch",
-      cat: "Adornment | Adornments Collection",
-      tag: "Gift favourite",
+      cat: "Adornment",
+      group: "adornment",
+      tag: "Festive essential",
       price: "₹2,500 – ₹4,500",
       img: "images/adornment-clutch.svg",
-      alt: "Deep green embroidered clutch with gold zari work — VM Design Studio",
-      desc: "A small piece of heirloom craft — hand-embroidered clutch that finishes any bridal or festive look.",
-      details: ["Hand aari embroidery", "In stock or 2-week lead", "Perfect festival gifting", "Ships worldwide"]
+      alt: "Hand-embroidered zari clutch with gold thread work — VM Design Studio",
+      desc: "A little piece of the atelier for every day — hand-embroidered zari clutch in your choice of base colour.",
+      details: ["Technique: hand zari", "Made to order: 2–3 weeks", "Custom colours available", "Ships worldwide"]
     },
     {
       name: "Heritage Dupatta",
-      cat: "Adornment | Adornments Collection",
-      tag: "Wedding essential",
+      cat: "Adornment",
+      group: "adornment",
+      tag: "Gift favourite",
       price: "₹1,800 – ₹3,500",
       img: "images/adornment-dupatta.svg",
-      alt: "Cream dupatta with golden zari hand-embroidered border — VM Design Studio",
-      desc: "A hand-finished zari border dupatta — the finishing touch for sarees, lehengas and festive looks.",
-      details: ["Hand-embroidered zari border", "Colours on request", "2-week lead time", "Gift packaging available"]
-    },
-    {
-      name: "Indigo Statement Jacket",
-      cat: "Custom Jacket | Couture Collection",
-      tag: "Custom · Made for you",
-      price: "₹16,000 – ₹22,000",
-      img: "images/jacket-blue.svg",
-      alt: "Blue custom jacket with gold and multicolor embroidery — VM Design Studio",
-      desc: "A bespoke colour story — deep indigo with your choice of motifs, thread colours and finish. Yours alone.",
-      details: ["Fully customisable motifs", "Lead time: 4–5 weeks", "Made to measure", "One-of-one piece"]
+      alt: "Hand-embroidered dupatta with golden zari borders — VM Design Studio",
+      desc: "A hand-embroidered dupatta with zari borders — the finishing touch for sarees, lehengas and everything in between.",
+      details: ["Technique: hand aari + zari border", "Made to order: 2–3 weeks", "Colour options on request", "Gift wrapping available"]
     }
   ];
 
-  /* ---- Build lookbook ---- */
-  var masonry = document.getElementById("masonry");
+  /* ---- Render collection grid ---- */
+  var grid = document.getElementById("grid");
   LOOKBOOK.forEach(function (item, i) {
     var card = document.createElement("article");
-    card.className = "look-card reveal";
-    card.tabIndex = 0;
-    card.setAttribute("role", "button");
-    card.setAttribute("aria-label", item.name + " — view details");
+    card.className = "card reveal";
+    card.dataset.group = item.group;
+    card.style.animationDelay = (i * 0.06) + "s";
     card.innerHTML =
-      '<img src="' + item.img + '" alt="' + item.alt + '" loading="lazy">' +
-      '<div class="look-overlay">' +
-        '<p class="look-name">' + item.name + '</p>' +
-        '<p class="look-cat">' + item.cat + '</p>' +
-        '<p class="look-hint">✦ Tap to view details</p>' +
+      '<div class="card-media">' +
+        '<img src="' + item.img + '" alt="' + item.alt + '" loading="lazy">' +
+        '<p class="card-tag">' + item.tag + '</p>' +
+        '<div class="card-overlay">' +
+          '<button class="btn btn-gold" data-view="' + i + '">Quick View</button>' +
+          '<a class="btn btn-ghost" href="' + waLink("Hi, I'm interested in the " + item.name + " (" + item.price + ") from VM Design Studio.") + '" target="_blank" rel="noopener" aria-label="Enquire about ' + item.name + ' on WhatsApp">Enquire</a>' +
+        '</div>' +
+      '</div>' +
+      '<div class="card-body">' +
+        '<p class="card-cat">' + item.cat + '</p>' +
+        '<h3 class="card-name">' + item.name + '</h3>' +
+        '<p class="card-price">' + item.price + '</p>' +
       '</div>';
-    card.addEventListener("click", function () { openModal(i); });
-    card.addEventListener("keydown", function (e) {
-      if (e.key === "Enter" || e.key === " ") { e.preventDefault(); openModal(i); }
+    card.querySelector('[data-view]').addEventListener("click", function () { openModal(i); });
+    grid.appendChild(card);
+  });
+
+  /* ---- Filters ---- */
+  var chips = document.querySelectorAll(".chip");
+  chips.forEach(function (chip) {
+    chip.addEventListener("click", function () {
+      chips.forEach(function (c) { c.classList.remove("is-active"); });
+      chip.classList.add("is-active");
+      var f = chip.dataset.filter;
+      document.querySelectorAll(".card").forEach(function (card) {
+        var show = (f === "all" || card.dataset.group === f);
+        card.classList.toggle("is-hidden", !show);
+        if (show) { card.style.animation = "none"; void card.offsetWidth; card.style.animation = ""; }
+      });
     });
-    masonry.appendChild(card);
   });
 
   /* ---- Modal ---- */
@@ -128,6 +154,7 @@
     document.getElementById("modalImage").src = item.img;
     document.getElementById("modalImage").alt = item.alt;
     document.getElementById("modalTag").textContent = item.tag;
+    document.getElementById("modalCat").textContent = item.cat;
     document.getElementById("modalTitle").textContent = item.name;
     document.getElementById("modalPrice").textContent = item.price;
     document.getElementById("modalDesc").textContent = item.desc;
@@ -138,10 +165,11 @@
       li.textContent = d;
       ul.appendChild(li);
     });
-    document.getElementById("modalWa").href = waLink("Hi, I'm interested in the " + item.name + " from VM Design Studio.");
+    document.getElementById("modalWa").href = waLink("Hi, I'm interested in the " + item.name + " (" + item.price + ") from VM Design Studio.");
+    document.getElementById("modalFitting").href = WA_FITTING;
     modal.hidden = false;
     document.body.style.overflow = "hidden";
-    modal.querySelector(".modal-close").focus();
+    document.getElementById("modalClose") || modal.querySelector(".modal-close").focus();
   }
   function closeModal() {
     modal.hidden = true;
@@ -155,43 +183,78 @@
     if (e.key === "Escape" && !modal.hidden) closeModal();
   });
 
-  /* ---- WhatsApp CTAs ---- */
-  document.querySelectorAll(".wa-general").forEach(function (a) { a.href = WA_GENERAL; });
-  document.querySelectorAll(".wa-custom").forEach(function (a) { a.href = WA_CUSTOM; });
-  document.querySelectorAll(".wa-product").forEach(function (a) { /* set per modal */ });
+  /* ---- Accordion ---- */
+  document.querySelectorAll(".acc-q").forEach(function (q) {
+    q.addEventListener("click", function () {
+      var item = q.parentElement;
+      var isOpen = item.classList.contains("is-open");
+      document.querySelectorAll(".acc-item").forEach(function (it) {
+        it.classList.remove("is-open");
+        it.querySelector(".acc-a").style.maxHeight = null;
+        it.querySelector(".acc-q").setAttribute("aria-expanded", "false");
+      });
+      if (!isOpen) {
+        item.classList.add("is-open");
+        var a = item.querySelector(".acc-a");
+        a.style.maxHeight = a.scrollHeight + "px";
+        q.setAttribute("aria-expanded", "true");
+      }
+    });
+  });
 
-  /* ---- Instagram tiles (placeholder) ---- */
+  /* ---- Instagram tiles ---- */
   var igGrid = document.getElementById("igGrid");
-  var igImgs = ["real/work-1.jpg","real/work-2.jpg","real/work-3.jpg","real/whatsapp-emb-3.jpg","real/whatsapp-emb-4.jpg","real/whatsapp-emb-5.jpg"];
-  igImgs.forEach(function (img, i) {
+  var igImgs = [
+    "images/real/work-1.webp",
+    "images/real/whatsapp-emb-3.webp",
+    "images/real/work-2.webp",
+    "images/real/whatsapp-emb-4.webp",
+    "images/real/work-3.webp",
+    "images/real/whatsapp-emb-5.webp"
+  ];
+  igImgs.forEach(function (img) {
     var a = document.createElement("a");
     a.className = "ig-tile";
     a.href = "https://www.instagram.com/vmdesignstudio24";
     a.target = "_blank";
     a.rel = "noopener";
-    a.setAttribute("aria-label", "VM Design Studio Instagram post " + (i + 1));
-    a.innerHTML = '<img src="images/' + img + '" alt="VM Design Studio Instagram post — handcrafted couture" loading="lazy">';
+    a.setAttribute("aria-label", "VM Design Studio on Instagram — handcrafted couture");
+    a.innerHTML = '<img src="' + img + '" alt="VM Design Studio Instagram — handcrafted couture" loading="lazy">';
     igGrid.appendChild(a);
   });
 
-  /* ---- Scroll effects ---- */
-  var header = document.getElementById("siteHeader");
+  /* ---- Mobile nav ---- */
+  var navToggle = document.getElementById("navToggle");
+  var nav = document.getElementById("nav");
+  navToggle.addEventListener("click", function () {
+    var open = nav.classList.toggle("is-open");
+    navToggle.setAttribute("aria-expanded", String(open));
+    navToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+  });
+  nav.querySelectorAll("a").forEach(function (a) {
+    a.addEventListener("click", function () {
+      nav.classList.remove("is-open");
+      navToggle.setAttribute("aria-expanded", "false");
+    });
+  });
+
+  /* ---- Reveal on scroll ---- */
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      if (en.isIntersecting) {
+        en.target.classList.add("is-visible");
+        io.unobserve(en.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll(".reveal, .section-head, .pillar, .process li, .ship-card, .acc-item, .contact-copy, .bespoke-media").forEach(function (el) {
+    if (!el.classList.contains("reveal")) el.classList.add("reveal");
+    io.observe(el);
+  });
+
+  /* ---- Header shadow on scroll ---- */
+  var header = document.querySelector(".site-header");
   window.addEventListener("scroll", function () {
-    header.classList.toggle("scrolled", window.scrollY > 40);
+    header.classList.toggle("is-scrolled", window.scrollY > 10);
   }, { passive: true });
-
-  var revealEls = document.querySelectorAll(".reveal");
-  if ("IntersectionObserver" in window) {
-    var io = new IntersectionObserver(function (entries) {
-      entries.forEach(function (en) {
-        if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); }
-      });
-    }, { threshold: 0.12 });
-    revealEls.forEach(function (el) { io.observe(el); });
-  } else {
-    revealEls.forEach(function (el) { el.classList.add("in"); });
-  }
-
-  /* ---- Year ---- */
-  document.getElementById("year").textContent = new Date().getFullYear();
 })();
