@@ -57,3 +57,15 @@ Upload all files to `public_html/` — that's it.
 ## Customisation
 - Colours: edit CSS variables at the top of `styles.css` (`--green-800`, `--gold`, `--cream`).
 - Fonts: swap `Georgia` in `--font-serif` for a Google Font (e.g., Cormorant Garamond) in `index.html`.
+
+## 🔗 LIVE URL
+**Deployed:** https://kaifashraff.github.io/vm-design-studio/ (GitHub Pages, public repo `kaifashraff/vm-design-studio`)
+- Open on phone: scan QR or visit the URL above
+- Repo: https://github.com/kaifashraff/vm-design-studio
+- To take down: delete repo or disable Pages in repo Settings → Pages
+
+## 🔁 Updating the live site
+After editing files here, run:
+```bash
+./deploy.sh
+```
