@@ -1,18 +1,39 @@
-# Image Credits
+# CREDITS — VM Design Studio website
 
-Product photography on this site is **temporary real-wear visuals** from [Pexels](https://www.pexels.com)
-(free license — free to use, no attribution required) until VM Design Studio's own product shoot.
+## Photography (free license, used as style references)
+All photos are from **Pexels** (Pexels License — free for commercial use, no attribution required)
+and **Unsplash** (not used in final build), downloaded by the site owner.
 
-| Site image | Pexels photo |
-|---|---|
-| `images/products/jacket-cream.webp` | pexels.com/photo/33031479 — Confident Woman Posing Outdoors in Embroidered Jacket |
-| `images/products/jacket-ivory.webp` | pexels.com/photo/36325975 — Elegant South Asian Woman in Embroidered Dress |
-| `images/products/jacket-indigo.webp` | pexels.com/photo/19405432 — Model in Navy Blue Embroidered Dress and a Flowing Scarf |
-| `images/products/lehenga-red.webp` | pexels.com/photo/17001511 — Elegant Bride in Traditional Red Lehenga at Wedding |
-| `images/products/lehenga-maroon.webp` | pexels.com/photo/29336846 — Elegant Indian Bride in Traditional Attire |
-| `images/products/gown-emerald.webp` | pexels.com/photo/33300622 — Emerald green couture |
-| `images/products/blouse-bridal.webp` | pexels.com/photo/15227848 — Woman in Traditional Embroidered Blouse in Studio |
-| `images/products/clutch-zari.webp` | pexels.com/photo/35251814 — Intricate Embroidery on Fabric with Hoop |
-| `images/products/dupatta-red.webp` | pexels.com/photo/11744043 — A Woman Wearing Red Dupattas |
+Pexels photos used (photographer — subject):
+- 1054048/11702815 — Indian bride in red lehenga (bridal card, gallery, IG)
+- 1054048/12747884 — bride in red lehenga, archway (bridal card, gallery)
+- 1054048/14088968 — woman dancing in embroidered dress (HERO, saree card, IG)
+- altinduvakmoda/29201406 — red bridal gown, Türkiye (house float image)
+- anna-pou/9345716 — man in festive traditional attire (gallery)
+- artworkbyumair/15226363 — woman in beaded attire (gallery)
+- dhanno/34413681 — embroidered dress, hands with rings (blouse card, craft, IG)
+- dhanno/34688060 — hand jewelry on velvet sleeve (blouse card, craft, IG)
+- dhanno/37962852 — purple embroidered outfit (reception card, IG)
+- ds-babariya/38092542 — sparkling dress, floral arrangement (gown card)
+- ds-babariya/38092543 — spinning detailed gown (gown card)
+- fahadputhawala/33940208 — bride in red veil (bespoke media)
+- gursher-gill/13156144 — bride's hands, mehndi (gallery)
+- gursher-gill/13661786 — bride, red & gold lehenga, columns (bridal card, gallery, IG)
+- gursher-gill/14284122 — gold zardozi on teal macro (craft, IG)
+- luisbecerrafotografo/5999452 — woman holding clutch (adornment card, IG)
+- rajeshverma/13191607 — runway ethnic model (saree card, IG)
+- theamritdev/37439722 — groom outfit, red shawl (groom card, IG)
+- vireshstudio/18016514 — garment on stand, corridor (house main image)
 
-**To replace:** drop VM's own product photos into `images/products/` with the same filenames (or update `script.js` LOOKBOOK `img` paths) — no other changes needed.
+## Video (Pexels License)
+- videos/zari-vertical-gold.mp4 (8516365) — craft-in-motion loop, gold tones
+- videos/atelier-landscape.mp4 (12091510) — landscape b-roll
+- videos/craft-vertical-dark.mp4 (15394235) — dark embroidery close-up
+(All compressed with ffmpeg; poster frames generated.)
+
+## Fonts
+- Cormorant Garamond + Jost — Google Fonts (OFL), self-hosted.
+
+## Notes
+Photos are **style references**, not the actual VM products. The site is honest about this
+("Visuals are indicative") until the owner's own product shoot replaces them.

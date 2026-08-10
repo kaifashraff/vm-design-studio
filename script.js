@@ -1,11 +1,6 @@
 /* ═══════════════════════════════════════════════
-   VM DESIGN STUDIO — script.js
+   VM DESIGN STUDIO — script.js (v3)
    ═══════════════════════════════════════════════ */
-/* ───────────────────────────────────────────────────────────
-   Product photography: free-license stock photos (Pexels) —
-   temporary real-wear visuals until VM's own product shoot.
-   Pexels license: free to use, no attribution required.
-   ─────────────────────────────────────────────────────────── */
 (function () {
   "use strict";
 
@@ -18,292 +13,345 @@
   var WA_GENERAL = waLink("Hi, I'm interested in VM Design Studio couture.");
   var WA_FITTING = waLink("Hi, I'd like to book a video fitting call with VM Design Studio.");
 
-  /* ---- Lookbook data (update prices/details with owner) ---- */
+  /* ---- Lookbook data (visuals are style references; update with owner) ---- */
   var LOOKBOOK = [
     {
-      name: "Rani Bridal Lehenga — Red",
+      name: "Rani Bridal Lehenga",
       cat: "Bridal Lehenga",
-      group: "lehenga",
+      group: "bridal",
       tag: "Bridal · book 8–10 weeks ahead",
       price: "₹45,000 – ₹75,000",
-      img: "images/products/lehenga-01.jpg",
-      alt: "Red bridal lehenga with heavy golden zari embroidery — VM Design Studio",
+      img: "images/pexels-1054048-11702815.webp",
+      fallback: "images/pexels-1054048-11702815.jpg",
+      alt: "Indian bride in a red lehenga adorned with jewelry — VM Design Studio",
       desc: "A traditional red bridal lehenga with heavy gold zari, designed around your wedding story — your blouse, your dupatta, your heirloom.",
       details: ["Technique: heavy aari + zari, hand-finished", "Lead time: 8–10 weeks for bridal", "Includes blouse + dupatta styling", "Consultation on WhatsApp"]
     },
     {
-      name: "Maharani Lehenga — Maroon",
+      name: "Archway Bridal Lehenga",
       cat: "Bridal Lehenga",
-      group: "lehenga",
+      group: "bridal",
       tag: "Bridal",
-      price: "₹35,000 – ₹60,000",
-      img: "images/products/lehenga-02.jpg",
-      alt: "Maroon bridal lehenga with gold and green zari embroidery — VM Design Studio",
-      desc: "Deep maroon silk with gold and emerald zari borders — for the bride who wants heritage with a modern edge.",
+      price: "₹38,000 – ₹65,000",
+      img: "images/pexels-1054048-12747884.webp",
+      fallback: "images/pexels-1054048-12747884.jpg",
+      alt: "Woman in an ornate red lehenga standing in a historic archway — VM Design Studio",
+      desc: "Deep red silk with hand-worked gold borders — for the bride who wants heritage with a modern edge. Made to measure around you.",
       details: ["Technique: aari + zari with bead accents", "Lead time: 6–8 weeks", "Saree-blouse styling available", "Worldwide shipping"]
     },
     {
-      name: "Gold Zari Bridal Lehenga",
+      name: "Maharani Lehenga — Red & Gold",
       cat: "Bridal Lehenga",
-      group: "lehenga",
+      group: "bridal",
       tag: "Heavy zardozi",
-      price: "₹40,000 – ₹70,000",
-      img: "images/products/lehenga-03.jpg",
-      alt: "Bridal lehenga with dense gold zardozi embroidery — VM Design Studio",
-      desc: "Gold-on-gold zardozi over rich fabric — a lehenga that catches the light with every step. Made to measure around you.",
+      price: "₹42,000 – ₹72,000",
+      img: "images/pexels-gursher-gill-63702010-13661786.webp",
+      fallback: "images/pexels-gursher-gill-63702010-13661786.jpg",
+      alt: "Bride in a lavish red and gold lehenga against a historic backdrop of columns and arches — VM Design Studio",
+      desc: "Gold-on-red zardozi over rich fabric — a lehenga that catches the light with every step. Our most requested bridal silhouette.",
       details: ["Technique: hand zardozi + aari", "Lead time: 8–10 weeks", "Matching blouse + dupatta", "Made to measure"]
     },
     {
-      name: "Regal Zari Lehenga",
-      cat: "Bridal Lehenga",
-      group: "lehenga",
+      name: "Amethyst Reception Ensemble",
+      cat: "Bridal / Reception",
+      group: "bridal",
+      tag: "Reception ready",
+      price: "₹35,000 – ₹60,000",
+      img: "images/pexels-dhanno-37962852.webp",
+      fallback: "images/pexels-dhanno-37962852.jpg",
+      alt: "Fashion model in a traditional purple outfit with intricate embroidery — VM Design Studio",
+      desc: "A jewel-toned reception look with intricate hand embroidery — for the bride who wants colour, craft and confidence.",
+      details: ["Technique: hand zari embroidery", "Lead time: 6–8 weeks", "Custom colours available", "Video fitting included"]
+    },
+    {
+      name: "Twirl Gown — Bespoke",
+      cat: "Bespoke Gown",
+      group: "gowns",
+      tag: "Custom couture",
+      price: "₹40,000 – ₹68,000",
+      img: "images/pexels-ds-babariya-756428940-38092543.webp",
+      fallback: "images/pexels-ds-babariya-756428940-38092543.jpg",
+      alt: "Woman elegantly spinning in a detailed gown, showcasing fashion and movement — VM Design Studio",
+      desc: "A gown that moves — hand-embroidered panels, custom silhouette, engineered to twirl. Designed for receptions and milestone evenings.",
+      details: ["Technique: hand aari + zari panels", "Lead time: 6–8 weeks", "Designed to your silhouette", "Progress photos while crafting"]
+    },
+    {
+      name: "Soirée Sequin Gown",
+      cat: "Evening Gown",
+      group: "gowns",
       tag: "New",
-      price: "₹38,000 – ₹65,000",
-      img: "images/products/lehenga-04.jpg",
-      alt: "Elegant bridal lehenga with intricate zari work — VM Design Studio",
-      desc: "A regal silhouette with intricate zari borders and hand-finished detailing — heritage craft for the modern bride.",
-      details: ["Technique: hand zari embroidery", "Lead time: 6–8 weeks", "Custom colours available", "Worldwide insured shipping"]
+      price: "₹25,000 – ₹45,000",
+      img: "images/pexels-ds-babariya-756428940-38092542.webp",
+      fallback: "images/pexels-ds-babariya-756428940-38092542.jpg",
+      alt: "Woman in a sparkling dress with decorative floral arrangement indoors — VM Design Studio",
+      desc: "Hand-placed sequins and embroidery over a structured evening silhouette — quiet glamour for the modern occasion.",
+      details: ["Technique: hand embellishment", "Lead time: 5–7 weeks", "Custom sizing", "Worldwide insured shipping"]
     },
     {
-      name: "Bridal Zardozi Lehenga",
-      cat: "Bridal Lehenga",
-      group: "lehenga",
-      tag: "Bridal",
-      price: "₹42,000 – ₹72,000",
-      img: "images/products/lehenga-05.jpg",
-      alt: "Heavily embroidered bridal lehenga with zardozi work — VM Design Studio",
-      desc: "Dense zardozi embroidery across the full lehenga — an heirloom piece, embroidered by hand in our Anand atelier.",
-      details: ["Technique: heavy zardozi", "Lead time: 8–10 weeks", "Video fitting included", "Made to measure"]
-    },
-    {
-      name: "Banarasi Zari Saree",
+      name: "Dancing Muse Embroidered Saree",
       cat: "Hand-Embroidered Saree",
-      group: "saree",
-      tag: "Heritage weave + hand zari",
-      price: "₹18,000 – ₹35,000",
-      img: "images/products/saree-01.jpg",
-      alt: "Banarasi style saree with gold zari border and embroidery — VM Design Studio",
-      desc: "A saree where woven zari meets hand embroidery — gold borders, hand-worked motifs and a fall that drapes beautifully.",
+      group: "sarees",
+      tag: "Festive essential",
+      price: "₹18,000 – ₹32,000",
+      img: "images/pexels-1054048-14088968.webp",
+      fallback: "images/pexels-1054048-14088968.jpg",
+      alt: "Indian woman dancing gracefully in an exquisite traditional dress with intricate embroidery — VM Design Studio",
+      desc: "A saree engineered to move — hand-embroidered motifs across the pallu, built for garba nights and wedding dances.",
       details: ["Technique: hand zari + aari accents", "Lead time: 4–6 weeks", "Blouse piece included", "Custom pallu styling"]
     },
     {
-      name: "Bridal Gold-Border Saree",
+      name: "Runway Zari Saree",
       cat: "Hand-Embroidered Saree",
-      group: "saree",
-      tag: "Bridal",
-      price: "₹22,000 – ₹40,000",
-      img: "images/products/saree-02.jpg",
-      alt: "Bridal saree with heavy gold border embroidery — VM Design Studio",
-      desc: "A heavy gold border, hand-embroidered motif by motif — the perfect wedding saree, made to your colours.",
-      details: ["Technique: hand zari embroidery", "Lead time: 6–8 weeks", "Matching blouse available", "Made to measure"]
-    },
-    {
-      name: "Silk Zardozi Saree",
-      cat: "Hand-Embroidered Saree",
-      group: "saree",
-      tag: "New",
+      group: "sarees",
+      tag: "Showstopper",
       price: "₹20,000 – ₹38,000",
-      img: "images/products/saree-03.jpg",
-      alt: "Silk saree with zardozi embroidery work — VM Design Studio",
-      desc: "Pure silk with hand zardozi work — a quiet-luxury saree for receptions and milestone evenings.",
-      details: ["Technique: hand zardozi", "Lead time: 4–6 weeks", "Blouse included", "Worldwide shipping"]
+      img: "images/pexels-rajeshverma-13191607.webp",
+      fallback: "images/pexels-rajeshverma-13191607.jpg",
+      alt: "Model in ethnic embroidery walking a runway, showcasing luxury fashion — VM Design Studio",
+      desc: "A showstopper saree with dense hand embroidery — designed to be seen, made to be remembered.",
+      details: ["Technique: hand zardozi", "Lead time: 4–6 weeks", "Blouse included", "Made to measure"]
     },
     {
-      name: "Heritage Zari Saree",
-      cat: "Hand-Embroidered Saree",
-      group: "saree",
-      tag: "Festive essential",
-      price: "₹15,000 – ₹28,000",
-      img: "images/products/saree-04.jpg",
-      alt: "Heritage saree with hand zari border work — VM Design Studio",
-      desc: "Timeless zari borders and hand-worked pallu — a saree that moves from pooja to party without missing a beat.",
-      details: ["Technique: hand zari border", "Lead time: 4–5 weeks", "Custom colours available", "Blouse piece included"]
-    },
-    {
-      name: "Heavy Embroidered Bridal Blouse",
+      name: "Velvet Zardozi Blouse",
       cat: "Bridal Blouse",
-      group: "blouse",
+      group: "blouses",
       tag: "Made to measure · 3–4 weeks",
       price: "₹6,000 – ₹12,000",
-      img: "images/products/blouse-01.jpg",
-      alt: "Heavily embroidered bridal blouse with dense hand zari and aari work — VM Design Studio",
-      desc: "The foundation of every bridal look — a fully hand-embroidered blouse built around your lehenga or saree, in your exact measurements.",
-      details: ["Technique: hand aari + zari, fully embroidered", "Lead time: 3–4 weeks", "Made to measure from your body measurements", "Matching dupatta and accessories available"]
+      img: "images/pexels-dhanno-34688060.webp",
+      fallback: "images/pexels-dhanno-34688060.jpg",
+      alt: "Close-up of elegant hand jewelry on an embroidered velvet sleeve — VM Design Studio",
+      desc: "A fully hand-embroidered velvet blouse — the foundation of every bridal look, built around your lehenga or saree.",
+      details: ["Technique: hand aari + zari, fully embroidered", "Lead time: 3–4 weeks", "Made to measure", "Matching accessories available"]
     },
     {
-      name: "Gold Zari Blouse",
+      name: "Heirloom Embroidered Blouse",
       cat: "Bridal Blouse",
-      group: "blouse",
+      group: "blouses",
       tag: "Reception ready",
       price: "₹5,000 – ₹10,000",
-      img: "images/products/blouse-02.jpg",
-      alt: "Gold zari embroidered blouse — VM Design Studio",
-      desc: "A hand-embroidered blouse with gold zari detailing — designed to sit perfectly under sarees, lehengas and gowns.",
+      img: "images/pexels-dhanno-34413681.webp",
+      fallback: "images/pexels-dhanno-34413681.jpg",
+      alt: "Intricate details of an embroidered dress with hands adorned in rings — VM Design Studio",
+      desc: "Hand-embroidered detail, stitch by stitch — designed to sit perfectly under sarees, lehengas and gowns.",
       details: ["Technique: hand zari + aari", "Lead time: 3–4 weeks", "Made to measure", "Custom necklines available"]
     },
     {
-      name: "Embroidered Anarkali Suit",
-      cat: "Hand-Embroidered Suit",
-      group: "suit",
-      tag: "New",
-      price: "₹14,000 – ₹25,000",
-      img: "images/products/suit-01.jpg",
-      alt: "Anarkali suit with hand embroidery and zari work — VM Design Studio",
-      desc: "A flowing anarkali with hand-embroidered zari and aari work — graceful, festive and made to measure.",
-      details: ["Technique: hand aari + zari", "Lead time: 4–6 weeks", "Made to measure", "Matching dupatta included"]
+      name: "Groom's Heritage Sherwani",
+      cat: "Groom Couture",
+      group: "groom",
+      tag: "Bridal · book early",
+      price: "₹18,000 – ₹35,000",
+      img: "images/pexels-theamritdev-37439722.webp",
+      fallback: "images/pexels-theamritdev-37439722.jpg",
+      alt: "Elegant traditional groom's outfit with intricate embroidery and a vibrant red shawl — VM Design Studio",
+      desc: "The groom deserves the same craft. A hand-embroidered sherwani, tailored to measure, with a matching shawl option.",
+      details: ["Technique: hand zari embroidery", "Lead time: 6–8 weeks", "Matching shawl available", "Made to measure"]
     },
+    {
+      name: "Zardozi Clutch",
+      cat: "Adornment",
+      group: "adornments",
+      tag: "Ready in 2–3 weeks",
+      price: "₹1,800 – ₹3,500",
+      img: "images/pexels-luisbecerrafotografo-5999452.webp",
+      fallback: "images/pexels-luisbecerrafotografo-5999452.jpg",
+      alt: "Close-up of a woman holding a detailed clutch bag under sunlight — VM Design Studio",
+      desc: "A hand-embroidered clutch to complete the look — zardozi, beads and silk, made to match your ensemble.",
+      details: ["Technique: hand zardozi + beads", "Lead time: 2–3 weeks", "Custom colours available", "Ships worldwide"]
+    }
   ];
 
   /* ---- Render collection grid ---- */
   var grid = document.getElementById("grid");
-  LOOKBOOK.forEach(function (item, i) {
+  if (grid) { LOOKBOOK.forEach(function (item, i) {
     var card = document.createElement("article");
     card.className = "card reveal";
     card.dataset.group = item.group;
-    card.style.animationDelay = (i * 0.06) + "s";
+    card.style.transitionDelay = ((i % 4) * 0.07) + "s";
     card.innerHTML =
       '<div class="card-media">' +
-        '<img src="' + item.img + '" alt="' + item.alt + '" loading="lazy">' +
-        '<p class="card-tag">' + item.tag + '</p>' +
-        '<div class="card-overlay">' +
-          '<button class="btn btn-gold" data-view="' + i + '">Quick View</button>' +
-          '<a class="btn btn-ghost" href="' + waLink("Hi, I'm interested in the " + item.name + " (" + item.price + ") from VM Design Studio.") + '" target="_blank" rel="noopener" aria-label="Enquire about ' + item.name + ' on WhatsApp">Enquire</a>' +
-        '</div>' +
+        '<img src="' + item.img + '" alt="' + item.alt + '" loading="lazy" width="800" height="1067">' +
+        '<span class="card-tag">' + item.tag + '</span>' +
       '</div>' +
       '<div class="card-body">' +
-        '<p class="card-cat">' + item.cat + '</p>' +
         '<h3 class="card-name">' + item.name + '</h3>' +
+        '<p class="card-cat">' + item.cat + '</p>' +
         '<p class="card-price">' + item.price + '</p>' +
       '</div>';
-    card.querySelector('[data-view]').addEventListener("click", function () { openModal(i); });
+    card.addEventListener("click", function () { openModal(item); });
     grid.appendChild(card);
   });
+  }
+
+  /* ---- Reveal-on-scroll for cards ---- */
+  var io = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add("revealed"); io.unobserve(e.target); }
+    });
+  }, { rootMargin: "0px 0px -40px 0px" });
+  if (grid) { grid.querySelectorAll(".card").forEach(function (c) { io.observe(c); }); }
 
   /* ---- Filters ---- */
+  if (grid) {
   var chips = document.querySelectorAll(".chip");
   chips.forEach(function (chip) {
     chip.addEventListener("click", function () {
       chips.forEach(function (c) { c.classList.remove("is-active"); });
       chip.classList.add("is-active");
       var f = chip.dataset.filter;
-      document.querySelectorAll(".card").forEach(function (card) {
+      grid.querySelectorAll(".card").forEach(function (card) {
         var show = (f === "all" || card.dataset.group === f);
-        card.classList.toggle("is-hidden", !show);
-        if (show) { card.style.animation = "none"; void card.offsetWidth; card.style.animation = ""; }
+        card.classList.toggle("hidden", !show);
+        if (show) { card.classList.add("revealed"); }
       });
     });
   });
+  }
 
   /* ---- Modal ---- */
   var modal = document.getElementById("productModal");
-  var lastFocus = null;
-  function openModal(i) {
-    var item = LOOKBOOK[i];
-    lastFocus = document.activeElement;
-    document.getElementById("modalImage").src = item.img;
-    document.getElementById("modalImage").alt = item.alt;
-    document.getElementById("modalTag").textContent = item.tag;
-    document.getElementById("modalCat").textContent = item.cat;
-    document.getElementById("modalTitle").textContent = item.name;
-    document.getElementById("modalPrice").textContent = item.price;
-    document.getElementById("modalDesc").textContent = item.desc;
-    var ul = document.getElementById("modalDetails");
-    ul.innerHTML = "";
+  var modalImg=null, modalTag=null, modalCat=null, modalTitle=null, modalPrice=null,
+      modalDesc=null, modalDetails=null, modalWa=null, modalFitting=null;
+
+  function openModal(item) {
+    modalImg.src = item.img;
+    modalImg.alt = item.alt;
+    modalImg.onerror = function () { if (this.src.indexOf(".webp") > -1) { this.src = item.fallback; } };
+    modalTag.textContent = item.tag;
+    modalCat.textContent = item.cat;
+    modalTitle.textContent = item.name;
+    modalPrice.textContent = item.price;
+    modalDesc.textContent = item.desc;
+    modalDetails.innerHTML = "";
     item.details.forEach(function (d) {
       var li = document.createElement("li");
       li.textContent = d;
-      ul.appendChild(li);
+      modalDetails.appendChild(li);
     });
-    document.getElementById("modalWa").href = waLink("Hi, I'm interested in the " + item.name + " (" + item.price + ") from VM Design Studio.");
-    document.getElementById("modalFitting").href = WA_FITTING;
+    modalWa.href = waLink("Hi, I'm interested in the " + item.name + " (" + item.price + ") at VM Design Studio.");
+    modalFitting.href = WA_FITTING;
     modal.hidden = false;
     document.body.style.overflow = "hidden";
-    document.getElementById("modalClose") || modal.querySelector(".modal-close").focus();
   }
+
   function closeModal() {
     modal.hidden = true;
     document.body.style.overflow = "";
-    if (lastFocus) lastFocus.focus();
   }
+  if (modal) {
+  modalImg = document.getElementById("modalImage");
+  modalTag = document.getElementById("modalTag");
+  modalCat = document.getElementById("modalCat");
+  modalTitle = document.getElementById("modalTitle");
+  modalPrice = document.getElementById("modalPrice");
+  modalDesc = document.getElementById("modalDesc");
+  modalDetails = document.getElementById("modalDetails");
+  modalWa = document.getElementById("modalWa");
+  modalFitting = document.getElementById("modalFitting");
   modal.querySelectorAll("[data-close]").forEach(function (el) {
     el.addEventListener("click", closeModal);
   });
-  document.addEventListener("keydown", function (e) {
-    if (e.key === "Escape" && !modal.hidden) closeModal();
-  });
+  document.addEventListener("keydown", function (e) { if (e.key === "Escape") closeModal(); });
+  }
 
-  /* ---- Accordion ---- */
-  document.querySelectorAll(".acc-q").forEach(function (q) {
-    q.addEventListener("click", function () {
-      var item = q.parentElement;
-      var isOpen = item.classList.contains("is-open");
-      document.querySelectorAll(".acc-item").forEach(function (it) {
-        it.classList.remove("is-open");
-        it.querySelector(".acc-a").style.maxHeight = null;
-        it.querySelector(".acc-q").setAttribute("aria-expanded", "false");
-      });
-      if (!isOpen) {
-        item.classList.add("is-open");
-        var a = item.querySelector(".acc-a");
-        a.style.maxHeight = a.scrollHeight + "px";
-        q.setAttribute("aria-expanded", "true");
-      }
+  /* ---- Mobile nav ---- */
+  var nav = document.getElementById("nav");
+  var navToggle = document.getElementById("navToggle");
+  navToggle.addEventListener("click", function () {
+    var open = nav.classList.toggle("open");
+    navToggle.classList.toggle("open", open);
+    navToggle.setAttribute("aria-expanded", open);
+    navToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+  });
+  nav.querySelectorAll("a").forEach(function (a) {
+    a.addEventListener("click", function () {
+      nav.classList.remove("open");
+      navToggle.classList.remove("open");
+      navToggle.setAttribute("aria-expanded", "false");
     });
   });
 
-  /* ---- Instagram tiles ---- */
-  var igGrid = document.getElementById("igGrid");
-  var igImgs = [
-    "images/real/work-1.webp",
-    "images/real/whatsapp-emb-3.webp",
-    "images/real/work-2.webp",
-    "images/real/whatsapp-emb-4.webp",
-    "images/real/work-3.webp",
-    "images/real/whatsapp-emb-5.webp"
+  /* ---- Sticky header ---- */
+  var header = document.querySelector(".site-header");
+  function onScroll() {
+    header.classList.toggle("scrolled", window.scrollY > 40);
+  }
+  window.addEventListener("scroll", onScroll, { passive: true });
+  onScroll();
+
+  /* ---- Hero image (CSS background) ---- */
+  var heroBg = document.querySelector(".hero-bg");
+  if (heroBg) {
+    var heroImg = new Image();
+    heroImg.onload = function () {
+      heroBg.style.backgroundImage = "url('" + heroImg.src + "')";
+    };
+    heroImg.src = "images/pexels-1054048-14088968.jpg";
+  }
+
+  /* ---- Accordion ---- */
+  var accItems = document.querySelectorAll(".acc-item");
+  if (accItems.length) { accItems.forEach(function (item) {
+    var q = item.querySelector(".acc-q");
+    var a = item.querySelector(".acc-a");
+    q.addEventListener("click", function () {
+      var isOpen = item.classList.contains("open");
+      accItems.forEach(function (other) {
+        other.classList.remove("open");
+        other.querySelector(".acc-q").setAttribute("aria-expanded", "false");
+        other.querySelector(".acc-a").style.maxHeight = null;
+      });
+      if (!isOpen) {
+        item.classList.add("open");
+        q.setAttribute("aria-expanded", "true");
+        a.style.maxHeight = a.scrollHeight + "px";
+      }
+    });
+  });
+  }
+
+  /* ---- IG tiles ---- */
+  var IG = [
+    "images/pexels-1054048-11702815.webp",
+    "images/pexels-gursher-gill-63702010-13661786.webp",
+    "images/pexels-dhanno-34413681.webp",
+    "images/pexels-1054048-14088968.webp",
+    "images/pexels-dhanno-34688060.webp",
+    "images/pexels-gursher-gill-63702010-14284122.webp",
+    "images/pexels-rajeshverma-13191607.webp",
+    "images/pexels-dhanno-37962852.webp",
+    "images/pexels-theamritdev-37439722.webp",
+    "images/pexels-luisbecerrafotografo-5999452.webp",
+    "images/pexels-fahadputhawala-33940208.webp",
+    "images/pexels-artworkbyumair-15226363.webp"
   ];
-  igImgs.forEach(function (img) {
+  var igGrid = document.getElementById("igGrid");
+  if (igGrid) { IG.forEach(function (src, i) {
     var a = document.createElement("a");
     a.className = "ig-tile";
     a.href = "https://www.instagram.com/vmdesignstudio24";
     a.target = "_blank";
     a.rel = "noopener";
-    a.setAttribute("aria-label", "VM Design Studio on Instagram — handcrafted couture");
-    a.innerHTML = '<img src="' + img + '" alt="VM Design Studio Instagram — handcrafted couture" loading="lazy">';
+    a.setAttribute("aria-label", "VM Design Studio on Instagram");
+    var im = document.createElement("img");
+    im.src = src;
+    im.alt = "VM Design Studio work on Instagram";
+    im.loading = "lazy";
+    var ov = document.createElement("span");
+    ov.className = "ig-ov";
+    ov.innerHTML = "✦";
+    a.appendChild(im);
+    a.appendChild(ov);
     igGrid.appendChild(a);
   });
+  }
 
-  /* ---- Mobile nav ---- */
-  var navToggle = document.getElementById("navToggle");
-  var nav = document.getElementById("nav");
-  navToggle.addEventListener("click", function () {
-    var open = nav.classList.toggle("is-open");
-    navToggle.setAttribute("aria-expanded", String(open));
-    navToggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
-  });
-  nav.querySelectorAll("a").forEach(function (a) {
-    a.addEventListener("click", function () {
-      nav.classList.remove("is-open");
-      navToggle.setAttribute("aria-expanded", "false");
+  /* ---- Generic reveal on scroll ---- */
+  var revIo = new IntersectionObserver(function (entries) {
+    entries.forEach(function (e) {
+      if (e.isIntersecting) { e.target.classList.add("visible"); revIo.unobserve(e.target); }
     });
-  });
+  }, { rootMargin: "0px 0px -60px 0px" });
+  document.querySelectorAll(".reveal:not(.card)").forEach(function (el) { revIo.observe(el); });
 
-  /* ---- Reveal on scroll ---- */
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (en) {
-      if (en.isIntersecting) {
-        en.target.classList.add("is-visible");
-        io.unobserve(en.target);
-      }
-    });
-  }, { threshold: 0.12 });
-  document.querySelectorAll(".reveal, .section-head, .pillar, .process li, .ship-card, .acc-item, .contact-copy, .bespoke-media").forEach(function (el) {
-    if (!el.classList.contains("reveal")) el.classList.add("reveal");
-    io.observe(el);
-  });
-
-  /* ---- Header shadow on scroll ---- */
-  var header = document.querySelector(".site-header");
-  window.addEventListener("scroll", function () {
-    header.classList.toggle("is-scrolled", window.scrollY > 10);
-  }, { passive: true });
 })();

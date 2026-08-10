@@ -9,7 +9,7 @@
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <link rel="stylesheet" href="styles.css">
 </head>
-<body>
+<body class="policy-page">
 <div class="announce" role="note"><p>Hand zari &amp; aari couture — Anand, Gujarat &nbsp;·&nbsp; Worldwide shipping 5–8 days</p></div>
 <header class="site-header">
   <div class="container nav-wrap">
@@ -17,14 +17,15 @@
       <span class="brand-mark" aria-hidden="true">VM</span>
       <span class="brand-text"><span class="brand-name">Design Studio</span><span class="brand-sub">Handcrafted Couture</span></span>
     </a>
-    <nav class="nav" aria-label="Primary">
+    <nav class="nav" id="nav" aria-label="Primary">
       <a href="index.html#collection">Collection</a>
       <a href="index.html#atelier">The Atelier</a>
       <a href="index.html#bespoke">Bespoke</a>
       <a href="index.html#faq">FAQ</a>
       <a href="index.html#contact">Contact</a>
       <a class="nav-cta" href="https://wa.me/919876543210?text=Hi%2C%20I%27m%20interested%20in%20VM%20Design%20Studio%20couture." target="_blank" rel="noopener">Book a Fitting</a>
-    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Open menu" aria-expanded="false" aria-controls="nav"><span></span><span></span><span></span></button>
+  </nav>
   </div>
 </header>
 <section class="policy-hero">
@@ -48,5 +49,6 @@
     </div>
   </div>
 </footer>
+<script src="script.js"></script>
 </body>
 </html>
