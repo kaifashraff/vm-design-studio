@@ -1,9 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url><loc>https://kaifashraff.github.io/vm-design-studio/</loc><changefreq>weekly</changefreq><priority>1.0</priority></url>
-  <url><loc>https://kaifashraff.github.io/vm-design-studio/shipping-policy.html</loc><priority>0.5</priority></url>
-  <url><loc>https://kaifashraff.github.io/vm-design-studio/returns-exchange.html</loc><priority>0.5</priority></url>
-  <url><loc>https://kaifashraff.github.io/vm-design-studio/care-guide.html</loc><priority>0.4</priority></url>
-  <url><loc>https://kaifashraff.github.io/vm-design-studio/privacy-policy.html</loc><priority>0.3</priority></url>
-  <url><loc>https://kaifashraff.github.io/vm-design-studio/terms.html</loc><priority>0.3</priority></url>
+  <url><loc>https://kaifashraff.github.io/vm-design-studio/</loc></url>
+  <url><loc>https://kaifashraff.github.io/vm-design-studio/shop/</loc></url>
+  <url><loc>https://kaifashraff.github.io/vm-design-studio/search/</loc></url>
+  <url><loc>https://kaifashraff.github.io/vm-design-studio/about/</loc></url>
+  <url><loc>https://kaifashraff.github.io/vm-design-studio/contact/</loc></url>
+  <url><loc>https://kaifashraff.github.io/vm-design-studio/product/rani-bridal-lehenga/</loc></url>
+  <url><loc>https://kaifashraff.github.io/vm-design-studio/product/archway-bridal-lehenga/</loc></url>
+  <url><loc>https://kaifashraff.github.io/vm-design-studio/product/maharani-lehenga/</loc></url>
+  <url><loc>https://kaifashraff.github.io/vm-design-studio/product/amethyst-reception/</loc></url>
+  <url><loc>https://kaifashraff.github.io/vm-design-studio/product/twirl-gown/</loc></url>
+  <url><loc>https://kaifashraff.github.io/vm-design-studio/product/soiree-gown/</loc></url>
+  <url><loc>https://kaifashraff.github.io/vm-design-studio/product/dancing-muse-saree/</loc></url>
+  <url><loc>https://kaifashraff.github.io/vm-design-studio/product/runway-zari-saree/</loc></url>
+  <url><loc>https://kaifashraff.github.io/vm-design-studio/product/velvet-zardozi-blouse/</loc></url>
+  <url><loc>https://kaifashraff.github.io/vm-design-studio/product/heirloom-blouse/</loc></url>
+  <url><loc>https://kaifashraff.github.io/vm-design-studio/product/grooms-sherwani/</loc></url>
+  <url><loc>https://kaifashraff.github.io/vm-design-studio/product/zardozi-clutch/</loc></url>
+  <url><loc>https://kaifashraff.github.io/vm-design-studio/policies/shipping-policy/</loc></url>
+  <url><loc>https://kaifashraff.github.io/vm-design-studio/policies/returns-exchange/</loc></url>
+  <url><loc>https://kaifashraff.github.io/vm-design-studio/policies/care-guide/</loc></url>
+  <url><loc>https://kaifashraff.github.io/vm-design-studio/policies/privacy-policy/</loc></url>
+  <url><loc>https://kaifashraff.github.io/vm-design-studio/policies/terms/</loc></url>
 </urlset>
