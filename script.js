@@ -21,45 +21,12 @@
   /* ---- Lookbook data (update prices/details with owner) ---- */
   var LOOKBOOK = [
     {
-      name: "Aurelia Jacket — Cream",
-      cat: "Embroidered Jacket",
-      group: "jacket",
-      tag: "Bestseller · 40+ hrs handwork",
-      price: "₹12,000 – ₹15,000",
-      img: "images/products/jacket-cream.webp",
-      alt: "Heavily embroidered cream jacket with dense multicolor zari handwork — VM Design Studio",
-      desc: "Our signature piece: a cream base transformed by dense multicolor zari and aari hand embroidery. Pairs with silk sarees, gowns and lehengas alike.",
-      details: ["Technique: hand aari + zari embroidery", "Lead time: 3–4 weeks (made to order)", "Made-to-measure sizing available", "Worldwide insured shipping"]
-    },
-    {
-      name: "Ivory Heritage Jacket",
-      cat: "Embroidered Jacket",
-      group: "jacket",
-      tag: "New",
-      price: "₹15,000 – ₹18,000",
-      img: "images/products/jacket-ivory.webp",
-      alt: "Ivory ensemble with dense golden zari embroidery — VM Design Studio",
-      desc: "All-gold zari on ivory — a quieter, regal statement. The perfect reception and engagement piece.",
-      details: ["Technique: gold zari aari embroidery", "Lead time: 3–4 weeks", "Sizes XS–XXL, made to measure", "Custom colours available"]
-    },
-    {
-      name: "Indigo Statement Jacket",
-      cat: "Custom Jacket",
-      group: "jacket",
-      tag: "Custom colourway",
-      price: "₹16,000 – ₹22,000",
-      img: "images/products/jacket-indigo.webp",
-      alt: "Deep indigo heavily embroidered ensemble with gold zari work — VM Design Studio",
-      desc: "Deep indigo with gold zari — a bold, contemporary take on the heritage jacket. Made to order in your size.",
-      details: ["Technique: hand zari + aari", "Lead time: 4–5 weeks", "Made to measure", "Matching dupatta available"]
-    },
-    {
       name: "Rani Bridal Lehenga — Red",
       cat: "Bridal Lehenga",
-      group: "bridal",
+      group: "lehenga",
       tag: "Bridal · book 8–10 weeks ahead",
       price: "₹45,000 – ₹75,000",
-      img: "images/products/lehenga-red.webp",
+      img: "images/products/lehenga-01.jpg",
       alt: "Red bridal lehenga with heavy golden zari embroidery — VM Design Studio",
       desc: "A traditional red bridal lehenga with heavy gold zari, designed around your wedding story — your blouse, your dupatta, your heirloom.",
       details: ["Technique: heavy aari + zari, hand-finished", "Lead time: 8–10 weeks for bridal", "Includes blouse + dupatta styling", "Consultation on WhatsApp"]
@@ -67,57 +34,123 @@
     {
       name: "Maharani Lehenga — Maroon",
       cat: "Bridal Lehenga",
-      group: "bridal",
+      group: "lehenga",
       tag: "Bridal",
       price: "₹35,000 – ₹60,000",
-      img: "images/products/lehenga-maroon.webp",
+      img: "images/products/lehenga-02.jpg",
       alt: "Maroon bridal lehenga with gold and green zari embroidery — VM Design Studio",
       desc: "Deep maroon silk with gold and emerald zari borders — for the bride who wants heritage with a modern edge.",
       details: ["Technique: aari + zari with bead accents", "Lead time: 6–8 weeks", "Saree-blouse styling available", "Worldwide shipping"]
     },
     {
-      name: "Emerald Bespoke Gown",
-      cat: "Custom Couture",
-      group: "bespoke",
-      tag: "Custom · Price on Request",
-      price: "Price on Request",
-      img: "images/products/gown-emerald.webp",
-      alt: "Emerald green couture piece with gold embroidery — VM Design Studio",
-      desc: "Fully bespoke couture — your silhouette, our embroidery. From receptions to milestones, we design it around you.",
-      details: ["100% made to measure", "Design consultation included", "Lead time: 6–8 weeks", "Price on request — WhatsApp us"]
+      name: "Gold Zari Bridal Lehenga",
+      cat: "Bridal Lehenga",
+      group: "lehenga",
+      tag: "Heavy zardozi",
+      price: "₹40,000 – ₹70,000",
+      img: "images/products/lehenga-03.jpg",
+      alt: "Bridal lehenga with dense gold zardozi embroidery — VM Design Studio",
+      desc: "Gold-on-gold zardozi over rich fabric — a lehenga that catches the light with every step. Made to measure around you.",
+      details: ["Technique: hand zardozi + aari", "Lead time: 8–10 weeks", "Matching blouse + dupatta", "Made to measure"]
     },
     {
-      name: "Zari Clutch",
-      cat: "Adornment",
-      group: "adornment",
+      name: "Regal Zari Lehenga",
+      cat: "Bridal Lehenga",
+      group: "lehenga",
+      tag: "New",
+      price: "₹38,000 – ₹65,000",
+      img: "images/products/lehenga-04.jpg",
+      alt: "Elegant bridal lehenga with intricate zari work — VM Design Studio",
+      desc: "A regal silhouette with intricate zari borders and hand-finished detailing — heritage craft for the modern bride.",
+      details: ["Technique: hand zari embroidery", "Lead time: 6–8 weeks", "Custom colours available", "Worldwide insured shipping"]
+    },
+    {
+      name: "Bridal Zardozi Lehenga",
+      cat: "Bridal Lehenga",
+      group: "lehenga",
+      tag: "Bridal",
+      price: "₹42,000 – ₹72,000",
+      img: "images/products/lehenga-05.jpg",
+      alt: "Heavily embroidered bridal lehenga with zardozi work — VM Design Studio",
+      desc: "Dense zardozi embroidery across the full lehenga — an heirloom piece, embroidered by hand in our Anand atelier.",
+      details: ["Technique: heavy zardozi", "Lead time: 8–10 weeks", "Video fitting included", "Made to measure"]
+    },
+    {
+      name: "Banarasi Zari Saree",
+      cat: "Hand-Embroidered Saree",
+      group: "saree",
+      tag: "Heritage weave + hand zari",
+      price: "₹18,000 – ₹35,000",
+      img: "images/products/saree-01.jpg",
+      alt: "Banarasi style saree with gold zari border and embroidery — VM Design Studio",
+      desc: "A saree where woven zari meets hand embroidery — gold borders, hand-worked motifs and a fall that drapes beautifully.",
+      details: ["Technique: hand zari + aari accents", "Lead time: 4–6 weeks", "Blouse piece included", "Custom pallu styling"]
+    },
+    {
+      name: "Bridal Gold-Border Saree",
+      cat: "Hand-Embroidered Saree",
+      group: "saree",
+      tag: "Bridal",
+      price: "₹22,000 – ₹40,000",
+      img: "images/products/saree-02.jpg",
+      alt: "Bridal saree with heavy gold border embroidery — VM Design Studio",
+      desc: "A heavy gold border, hand-embroidered motif by motif — the perfect wedding saree, made to your colours.",
+      details: ["Technique: hand zari embroidery", "Lead time: 6–8 weeks", "Matching blouse available", "Made to measure"]
+    },
+    {
+      name: "Silk Zardozi Saree",
+      cat: "Hand-Embroidered Saree",
+      group: "saree",
+      tag: "New",
+      price: "₹20,000 – ₹38,000",
+      img: "images/products/saree-03.jpg",
+      alt: "Silk saree with zardozi embroidery work — VM Design Studio",
+      desc: "Pure silk with hand zardozi work — a quiet-luxury saree for receptions and milestone evenings.",
+      details: ["Technique: hand zardozi", "Lead time: 4–6 weeks", "Blouse included", "Worldwide shipping"]
+    },
+    {
+      name: "Heritage Zari Saree",
+      cat: "Hand-Embroidered Saree",
+      group: "saree",
       tag: "Festive essential",
-      price: "₹2,500 – ₹4,500",
-      img: "images/products/clutch-zari.webp",
-      alt: "Hand-embroidered zari clutch with gold thread work — VM Design Studio",
-      desc: "A little piece of the atelier for every day — hand-embroidered zari clutch in your choice of base colour.",
-      details: ["Technique: hand zari", "Made to order: 2–3 weeks", "Custom colours available", "Ships worldwide"]
-    },
-    {
-      name: "Heritage Dupatta",
-      cat: "Adornment",
-      group: "adornment",
-      tag: "Gift favourite",
-      price: "₹1,800 – ₹3,500",
-      img: "images/products/dupatta-red.webp",
-      alt: "Hand-embroidered red dupatta with golden zari borders — VM Design Studio",
-      desc: "A hand-embroidered dupatta with zari borders — the finishing touch for sarees, lehengas and everything in between.",
-      details: ["Technique: hand aari + zari border", "Made to order: 2–3 weeks", "Colour options on request", "Gift wrapping available"]
+      price: "₹15,000 – ₹28,000",
+      img: "images/products/saree-04.jpg",
+      alt: "Heritage saree with hand zari border work — VM Design Studio",
+      desc: "Timeless zari borders and hand-worked pallu — a saree that moves from pooja to party without missing a beat.",
+      details: ["Technique: hand zari border", "Lead time: 4–5 weeks", "Custom colours available", "Blouse piece included"]
     },
     {
       name: "Heavy Embroidered Bridal Blouse",
       cat: "Bridal Blouse",
-      group: "bridal",
+      group: "blouse",
       tag: "Made to measure · 3–4 weeks",
       price: "₹6,000 – ₹12,000",
-      img: "images/products/blouse-bridal.webp",
+      img: "images/products/blouse-01.jpg",
       alt: "Heavily embroidered bridal blouse with dense hand zari and aari work — VM Design Studio",
       desc: "The foundation of every bridal look — a fully hand-embroidered blouse built around your lehenga or saree, in your exact measurements.",
       details: ["Technique: hand aari + zari, fully embroidered", "Lead time: 3–4 weeks", "Made to measure from your body measurements", "Matching dupatta and accessories available"]
+    },
+    {
+      name: "Gold Zari Blouse",
+      cat: "Bridal Blouse",
+      group: "blouse",
+      tag: "Reception ready",
+      price: "₹5,000 – ₹10,000",
+      img: "images/products/blouse-02.jpg",
+      alt: "Gold zari embroidered blouse — VM Design Studio",
+      desc: "A hand-embroidered blouse with gold zari detailing — designed to sit perfectly under sarees, lehengas and gowns.",
+      details: ["Technique: hand zari + aari", "Lead time: 3–4 weeks", "Made to measure", "Custom necklines available"]
+    },
+    {
+      name: "Embroidered Anarkali Suit",
+      cat: "Hand-Embroidered Suit",
+      group: "suit",
+      tag: "New",
+      price: "₹14,000 – ₹25,000",
+      img: "images/products/suit-01.jpg",
+      alt: "Anarkali suit with hand embroidery and zari work — VM Design Studio",
+      desc: "A flowing anarkali with hand-embroidered zari and aari work — graceful, festive and made to measure.",
+      details: ["Technique: hand aari + zari", "Lead time: 4–6 weeks", "Made to measure", "Matching dupatta included"]
     },
   ];
 
