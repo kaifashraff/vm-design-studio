@@ -1,2 +1,2 @@
-:HL["/_next/static/chunks/1o2ii-zwkstfp.css","style"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4176,"slots":{"children":{"name":"product","param":null,"prefetchHints":4192,"slots":{"children":{"name":"id","param":{"type":"d","key":"zardozi-clutch","siblings":[]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"cAo4RFVK0bVTurmcmFTss"}
+:HL["/vm-design-studio/_next/static/chunks/1_k4v66-6-oza.css","style"]
+0:{"tree":{"name":"","param":null,"prefetchHints":4112,"slots":{"children":{"name":"product","param":null,"prefetchHints":4160,"slots":{"children":{"name":"id","param":{"type":"d","key":"zardozi-clutch","siblings":[]},"prefetchHints":4192,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4256,"slots":null}}}}}}},"staleTime":300,"buildId":"zd5hTBG61rwpWtEYbD1rW"}
