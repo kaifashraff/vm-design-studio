@@ -1,3 +1,4 @@
 User-agent: *
 Allow: /
+
 Sitemap: https://kaifashraff.github.io/vm-design-studio/sitemap.xml

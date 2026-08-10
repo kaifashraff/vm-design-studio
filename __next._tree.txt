@@ -2,4 +2,4 @@
 :HL["/vm-design-studio/images/pexels-1054048-14088968.webp","image",{"fetchPriority":"high"}]
 :HL["/vm-design-studio/images/pexels-vireshstudio-18016514.webp","image"]
 :HL["/vm-design-studio/images/pexels-altinduvakmoda-29201406.webp","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4112,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4224,"slots":null}}},"staleTime":300,"buildId":"7S2rv-eeRTRtnxHE5D6Ga"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4112,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4224,"slots":null}}},"staleTime":300,"buildId":"KCMbXVwZ9nCojMZBFrR3E"}
