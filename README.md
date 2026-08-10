@@ -9,9 +9,10 @@ Akaaro, Ogaan, House of Masaba, Odylyne the Ceremony, Needle & Thread, Anita Don
 ## What's inside
 | File | Purpose |
 |---|---|
-| `index.html` | Home — announcement bar, hero, marquee, collection (8 pieces, filterable), The Atelier (craft + BTS strip + stats), Bespoke (4-step process), Worldwide Shipping, FAQ (8), Instagram strip, Contact, footer |
+| `index.html` | Home — announcement bar, hero, marquee, collection (9 pieces, filterable), The Atelier (craft + BTS strip + stats), Bespoke (4-step process), Worldwide Shipping, FAQ (8), Instagram strip, Contact, footer |
 | `styles.css` | Full design system — deep green + gold editorial identity, Cormorant Garamond + Jost (self-hosted), fully responsive (375px → desktop), reduced-motion support |
 | `script.js` | Products data, filters, quick-view modal, accordion, mobile nav, reveal-on-scroll, IG tiles, floating WhatsApp |
+| `images/products/` | Real-wear product photography (free-license Pexels stock — heavily embroidered lehengas, blouses, jackets) as temporary visuals until VM's own product shoot; credits in `CREDITS.md` |
 | `shipping-policy.html`, `returns-exchange.html`, `care-guide.html`, `privacy-policy.html`, `terms.html`, `404.html` | Complete policy pages (honest made-to-order terms, duties disclosure — patterns from research) |
 | `images/real/` | Real craft photography (WebP + JPG fallback) — hero, craft pillars, BTS strip, IG tiles |
 | `images/*.svg` | Product mockups (jackets, lehengas, adornments, gown) + world map |

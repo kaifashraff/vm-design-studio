@@ -1,6 +1,11 @@
 /* ═══════════════════════════════════════════════
    VM DESIGN STUDIO — script.js
    ═══════════════════════════════════════════════ */
+/* ───────────────────────────────────────────────────────────
+   Product photography: free-license stock photos (Pexels) —
+   temporary real-wear visuals until VM's own product shoot.
+   Pexels license: free to use, no attribution required.
+   ─────────────────────────────────────────────────────────── */
 (function () {
   "use strict";
 
@@ -21,8 +26,8 @@
       group: "jacket",
       tag: "Bestseller · 40+ hrs handwork",
       price: "₹12,000 – ₹15,000",
-      img: "images/jacket-cream.svg",
-      alt: "Hand-embroidered cream jacket with multicolor zari thread work — VM Design Studio",
+      img: "images/products/jacket-cream.webp",
+      alt: "Heavily embroidered cream jacket with dense multicolor zari handwork — VM Design Studio",
       desc: "Our signature piece: a cream base transformed by dense multicolor zari and aari hand embroidery. Pairs with silk sarees, gowns and lehengas alike.",
       details: ["Technique: hand aari + zari embroidery", "Lead time: 3–4 weeks (made to order)", "Made-to-measure sizing available", "Worldwide insured shipping"]
     },
@@ -32,8 +37,8 @@
       group: "jacket",
       tag: "New",
       price: "₹15,000 – ₹18,000",
-      img: "images/jacket-ivory.svg",
-      alt: "Ivory hand-embroidered jacket with golden zari work — VM Design Studio",
+      img: "images/products/jacket-ivory.webp",
+      alt: "Ivory ensemble with dense golden zari embroidery — VM Design Studio",
       desc: "All-gold zari on ivory — a quieter, regal statement. The perfect reception and engagement piece.",
       details: ["Technique: gold zari aari embroidery", "Lead time: 3–4 weeks", "Sizes XS–XXL, made to measure", "Custom colours available"]
     },
@@ -43,8 +48,8 @@
       group: "jacket",
       tag: "Custom colourway",
       price: "₹16,000 – ₹22,000",
-      img: "images/jacket-blue.svg",
-      alt: "Indigo blue hand-embroidered jacket with golden zari work — VM Design Studio",
+      img: "images/products/jacket-indigo.webp",
+      alt: "Deep indigo heavily embroidered ensemble with gold zari work — VM Design Studio",
       desc: "Deep indigo with gold zari — a bold, contemporary take on the heritage jacket. Made to order in your size.",
       details: ["Technique: hand zari + aari", "Lead time: 4–5 weeks", "Made to measure", "Matching dupatta available"]
     },
@@ -54,7 +59,7 @@
       group: "bridal",
       tag: "Bridal · book 8–10 weeks ahead",
       price: "₹45,000 – ₹75,000",
-      img: "images/lehenga-red.svg",
+      img: "images/products/lehenga-red.webp",
       alt: "Red bridal lehenga with heavy golden zari embroidery — VM Design Studio",
       desc: "A traditional red bridal lehenga with heavy gold zari, designed around your wedding story — your blouse, your dupatta, your heirloom.",
       details: ["Technique: heavy aari + zari, hand-finished", "Lead time: 8–10 weeks for bridal", "Includes blouse + dupatta styling", "Consultation on WhatsApp"]
@@ -65,7 +70,7 @@
       group: "bridal",
       tag: "Bridal",
       price: "₹35,000 – ₹60,000",
-      img: "images/lehenga-maroon.svg",
+      img: "images/products/lehenga-maroon.webp",
       alt: "Maroon bridal lehenga with gold and green zari embroidery — VM Design Studio",
       desc: "Deep maroon silk with gold and emerald zari borders — for the bride who wants heritage with a modern edge.",
       details: ["Technique: aari + zari with bead accents", "Lead time: 6–8 weeks", "Saree-blouse styling available", "Worldwide shipping"]
@@ -76,8 +81,8 @@
       group: "bespoke",
       tag: "Custom · Price on Request",
       price: "Price on Request",
-      img: "images/gown-custom.svg",
-      alt: "Emerald green custom couture gown with gold embroidery — VM Design Studio",
+      img: "images/products/gown-emerald.webp",
+      alt: "Emerald green couture piece with gold embroidery — VM Design Studio",
       desc: "Fully bespoke couture — your silhouette, our embroidery. From receptions to milestones, we design it around you.",
       details: ["100% made to measure", "Design consultation included", "Lead time: 6–8 weeks", "Price on request — WhatsApp us"]
     },
@@ -87,7 +92,7 @@
       group: "adornment",
       tag: "Festive essential",
       price: "₹2,500 – ₹4,500",
-      img: "images/adornment-clutch.svg",
+      img: "images/products/clutch-zari.webp",
       alt: "Hand-embroidered zari clutch with gold thread work — VM Design Studio",
       desc: "A little piece of the atelier for every day — hand-embroidered zari clutch in your choice of base colour.",
       details: ["Technique: hand zari", "Made to order: 2–3 weeks", "Custom colours available", "Ships worldwide"]
@@ -98,11 +103,22 @@
       group: "adornment",
       tag: "Gift favourite",
       price: "₹1,800 – ₹3,500",
-      img: "images/adornment-dupatta.svg",
-      alt: "Hand-embroidered dupatta with golden zari borders — VM Design Studio",
+      img: "images/products/dupatta-red.webp",
+      alt: "Hand-embroidered red dupatta with golden zari borders — VM Design Studio",
       desc: "A hand-embroidered dupatta with zari borders — the finishing touch for sarees, lehengas and everything in between.",
       details: ["Technique: hand aari + zari border", "Made to order: 2–3 weeks", "Colour options on request", "Gift wrapping available"]
-    }
+    },
+    {
+      name: "Heavy Embroidered Bridal Blouse",
+      cat: "Bridal Blouse",
+      group: "bridal",
+      tag: "Made to measure · 3–4 weeks",
+      price: "₹6,000 – ₹12,000",
+      img: "images/products/blouse-bridal.webp",
+      alt: "Heavily embroidered bridal blouse with dense hand zari and aari work — VM Design Studio",
+      desc: "The foundation of every bridal look — a fully hand-embroidered blouse built around your lehenga or saree, in your exact measurements.",
+      details: ["Technique: hand aari + zari, fully embroidered", "Lead time: 3–4 weeks", "Made to measure from your body measurements", "Matching dupatta and accessories available"]
+    },
   ];
 
   /* ---- Render collection grid ---- */
