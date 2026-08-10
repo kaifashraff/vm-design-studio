@@ -1,4 +1,4 @@
-:HL["/vm-design-studio/_next/static/chunks/1_k4v66-6-oza.css","style"]
+:HL["/vm-design-studio/_next/static/chunks/061aauk5ksmv6.css","style"]
 :HL["/vm-design-studio/images/pexels-vireshstudio-18016514.webp","image"]
 :HL["/vm-design-studio/images/pexels-altinduvakmoda-29201406.webp","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4112,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4224,"slots":null}}},"staleTime":300,"buildId":"zd5hTBG61rwpWtEYbD1rW"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4112,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4224,"slots":null}}},"staleTime":300,"buildId":"3Khh_djMjqW-MDuNbj-vB"}
