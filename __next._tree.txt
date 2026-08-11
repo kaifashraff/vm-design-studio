@@ -1,5 +1,5 @@
-:HL["/vm-design-studio/_next/static/chunks/41jl9tq53t4_l.css","style"]
+:HL["/vm-design-studio/_next/static/chunks/2f-4f06hwr7yr.css","style"]
 :HL["/vm-design-studio/images/pexels-1054048-14088968.webp","image",{"fetchPriority":"high"}]
 :HL["/vm-design-studio/images/pexels-vireshstudio-18016514.webp","image"]
 :HL["/vm-design-studio/images/pexels-altinduvakmoda-29201406.webp","image"]
-0:{"tree":{"name":"","param":null,"prefetchHints":4112,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4224,"slots":null}}},"staleTime":300,"buildId":"KCMbXVwZ9nCojMZBFrR3E"}
+0:{"tree":{"name":"","param":null,"prefetchHints":4112,"slots":{"children":{"name":"__PAGE__","param":null,"prefetchHints":4224,"slots":null}}},"staleTime":300,"buildId":"apM0TvzWsWRO_lYvCRL-W"}
