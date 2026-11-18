@@ -10,6 +10,8 @@
 (function () {
   "use strict";
 
+  window.__VME_LAYER = "3";
+
   var STYLE_ID = "vme-style";
   var CRAFT_ID = "vme-craft-ext";
   var LOOK_ID  = "vme-lookbook";
@@ -203,22 +205,31 @@
 
   /* Wait until React has adopted <main>. Injecting before that makes the
      hydration step find extra DOM nodes and re-render over them. */
-  function reactHasMain() {
-    var main = document.querySelector("main");
-    if (!main) return false;
-    var keys = Object.keys(main);
+  function hasFiber(el) {
+    if (!el) return false;
+    var keys = Object.keys(el);
     for (var i = 0; i < keys.length; i++) {
       if (keys[i].indexOf("__reactFiber$") === 0 || keys[i].indexOf("__reactContainer$") === 0) return true;
     }
     return false;
   }
 
+  function reactHasMain() {
+    var main = document.querySelector("main");
+    if (!main) return false;
+    var secs = main.querySelectorAll("section");
+    var last = secs.length ? secs[secs.length - 1] : main.firstElementChild;
+    return hasFiber(main) && hasFiber(last);
+  }
+
   function whenReady(cb) {
     var t0 = Date.now();
     (function tick() {
       var loaded = document.readyState === "complete";
-      if ((loaded && reactHasMain()) || Date.now() - t0 > 7000) { cb(); return; }
-      window.setTimeout(tick, 120);
+      /* give hydration a moment to settle once it has reached the last block */
+      if (loaded && reactHasMain()) { window.setTimeout(cb, 600); return; }
+      if (Date.now() - t0 > 15000) { cb(); return; }
+      window.setTimeout(tick, 150);
     })();
   }
 
