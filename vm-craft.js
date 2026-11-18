@@ -10,7 +10,10 @@
 (function () {
   "use strict";
 
-  window.__VME_LAYER = "3";
+  window.__VME_LAYER = "4";
+
+  /* debug switch: ?vme=off loads the page with no enhancement layer */
+  if (/[?&]vme=off\b/.test(window.location.search)) return;
 
   var STYLE_ID = "vme-style";
   var CRAFT_ID = "vme-craft-ext";
