@@ -201,19 +201,25 @@
     observeReveals(document);
   }
 
-  function start() {
-    var tries = 0;
-    (function tick() {
-      if (findByText("Not mass-produced") || tries > 60) { run(); return; }
-      tries++;
-      window.setTimeout(tick, 120);
-    })();
+  /* Wait until React has adopted <main>. Injecting before that makes the
+     hydration step find extra DOM nodes and re-render over them. */
+  function reactHasMain() {
+    var main = document.querySelector("main");
+    if (!main) return false;
+    var keys = Object.keys(main);
+    for (var i = 0; i < keys.length; i++) {
+      if (keys[i].indexOf("__reactFiber$") === 0 || keys[i].indexOf("__reactContainer$") === 0) return true;
+    }
+    return false;
   }
 
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", start);
-  } else {
-    start();
+  function whenReady(cb) {
+    var t0 = Date.now();
+    (function tick() {
+      var loaded = document.readyState === "complete";
+      if ((loaded && reactHasMain()) || Date.now() - t0 > 7000) { cb(); return; }
+      window.setTimeout(tick, 120);
+    })();
   }
 
   /* put the blocks back if React ever rewrites <main> */
@@ -232,9 +238,6 @@
       });
     }).observe(main, { childList: true, subtree: false });
   }
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", watch);
-  } else {
-    watch();
-  }
+
+  whenReady(function () { run(); watch(); });
 })();
